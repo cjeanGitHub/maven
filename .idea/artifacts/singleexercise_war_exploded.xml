@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="singleexercise:war exploded">
+    <output-path>$PROJECT_DIR$/singleexercise/target/singleexercise</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="singleexercise" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/singleexercise/target/singleexercise/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="singleexercise/web/Web" />
+    </root>
+  </artifact>
+</component>
