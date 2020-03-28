@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=x-ua-compatible content="ie=edge">
+    <meta name=keywords content="">
+    <meta name=description content="xxxxxxxxxxxxxxxxx平台">
+    <title>用户登录 - xxxxxxxxxx</title>
+
+    <script language="javascript" type="text/javascript">
+        function checkInCorrect()      //判断用户名和密码是否为空
+        {
+            if (document.getElementById('username').value == "") {
+                alert('请输入用户名！')
+                document.getElementById('username').focus();
+                return false
+            }
+            if (document.getElementById('password').value == "") {
+                alert('请输入密码！')
+                document.getElementById('password').focus();
+                return false
+            }
+            else {
+                saveInfo();
+                return true;
+            }
+        }
+
+        saveInfo = function () {
+            try {
+                var isSave = document.getElementById('remember_password').checked;   //保存按键是否选中
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+                if (isSave) {
+                    if (username != "" && password != "") {
+                        SetCookie(username, password);
+                    }
+                } else {
+                    SetCookie("", "");
+                }
+                netWorking(username,password)
+            } catch (e) {
+
+            }
+        }
+
+        function SetCookie(username, password) {
+            var Then = new Date();
+            Then.setTime(Then.getTime() + 20);// 30天免登录
+            document.cookie = "username=" + username + "%%" + password + ";expires=" + Then.toGMTString();
+        }
+
+        function GetCookie() {
+            var nmpsd;
+            var nm;
+            var psd;
+            var cookieString = new String(document.cookie);
+            var cookieHeader = "username=";
+            var beginPosition = cookieString.indexOf(cookieHeader);
+            cookieString = cookieString.substring(beginPosition);
+            var ends = cookieString.indexOf(";");
+            if (ends != -1) {
+                cookieString = cookieString.substring(0, ends);
+            }
+            if (beginPosition > -1) {
+                nmpsd = cookieString.substring(cookieHeader.length);
+                if (nmpsd != "") {
+                    beginPosition = nmpsd.indexOf("%%");
+                    nm = nmpsd.substring(0, beginPosition);
+                    psd = nmpsd.substring(beginPosition + 2);
+                    document.getElementById('username').value = nm;
+                    document.getElementById('password').value = psd;
+                    if (nm != "" && psd != "") {
+                        // document.forms[0].checkbox.checked = true;
+                        document.getElementById('remember_password').checked = true;
+                    }
+                }
+            }
+        }
+        function netWorking(username,password){
+            $.ajax({
+                type:"post",
+                url:loginurl,
+                data:{
+                    username:username,  //期刊id
+                    password:password,
+                },
+                success: function(res) {
+                    console.log("请求数据1.："+res);
+                    console.log("请求数据2.："+JSON.stringify(res));
+                    var datas=eval(res);
+                    var ticket=datas.ticket;
+                    //var ticket=datas.msg;
+                    console.log("请求数据2.："+ticket);
+                    if (ticket==undefined) {
+                        alert("请您先注册");
+                    } else{
+                        window.location.href='htmls/home.html';
+                    }
+                },
+                error:function() {
+                    alert("失败");
+                }
+            });
+        }
+    </script>
+</head>
+<body onLoad="document.getElementById('username').focus();GetCookie();">
+<form>
+    <!--οnblur="GetPwdAndChk()"-->
+    用户名:<input type="text" id="username">
+    密 码:<input type="password" id="password">
+    <input type="checkbox" id="remember_password"/>记住密码
+    <input type="button" OnClick="checkInCorrect()" value="进入"/>
+</form>
+</body>
+</html>
