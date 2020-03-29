@@ -28,4 +28,9 @@ public class MyController {
     public String login3(){
         return "index-thymleaf";
     }
+
+    @RequestMapping("/webSocket")
+    public String webSocket(){
+        return "webSocket";
+    }
 }
