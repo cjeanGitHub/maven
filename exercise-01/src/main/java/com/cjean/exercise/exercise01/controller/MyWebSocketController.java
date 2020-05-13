@@ -49,6 +49,12 @@ public class MyWebSocketController {
         webSocketSet.remove(this);  //连接关闭后，将此websocket从set中删除
         subOnlineCount();           //在线数减1
         System.out.println("有一连接关闭！当前在线人数为" + getOnlineCount());
+        try {
+            sendMessage("有一连接关闭");
+            sendMessage("当前在线人数为" + getOnlineCount());
+        } catch (Exception e) {
+            System.out.println("IO异常");
+        }
     }
 
     /**
