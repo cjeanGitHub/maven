@@ -1,4 +1,4 @@
-package com.cjean.exercise.exercise01.algorithm;
+package com.cjean.exercise.exercise01.algorithm.SelectSort;
 
 import java.util.Arrays;
 
