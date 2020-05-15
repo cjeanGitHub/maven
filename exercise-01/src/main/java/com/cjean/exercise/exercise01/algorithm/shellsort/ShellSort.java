@@ -29,7 +29,6 @@ public class ShellSort {
 
     }
 
-
     public static void main(String[] args) {
         int[] args1 = {12, 134, 195, 21, 1, 61, 981, 88};
         int[] args2 = null;
