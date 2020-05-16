@@ -22,7 +22,7 @@ public class TestDemo {
          *
          *  i = i++;
          */
-        i = i++;
+//        i = i++;
 
         /**
          *
@@ -37,7 +37,7 @@ public class TestDemo {
          *  ++i;
          *  System.out.println((int)i);
          */
-//        i = ++i;
+        i = ++i;
 //        System.out.println(i);
 
 //        String s = "123";

@@ -43,6 +43,21 @@ public class TestDemo4 {
 
     }
 
+    /***
+     *
+     *  public void m10() {
+     *     iconst_0
+     *     istore 1
+     *     return
+     *   }
+     *
+     *   变量a居然不是 0， 是因为非static 方法，中自动内置一个 this 变量来指向方法所在类的引用地址
+     *   而 static 方法 中没有this ，因为该方法是在类所在常量池中的
+     */
+    public void m10(){
+        int a = 0;
+    }
+
     public static void main(String[] args) {
         int i;
         int j = 0;
