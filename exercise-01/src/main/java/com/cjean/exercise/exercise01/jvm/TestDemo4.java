@@ -45,6 +45,8 @@ public class TestDemo4 {
 
     /***
      *
+     * lambda表达式/反射/CGLB ASM  在运行时动态产生class会使用到的指令
+     *
      *  public void m10() {
      *     iconst_0
      *     istore 1
