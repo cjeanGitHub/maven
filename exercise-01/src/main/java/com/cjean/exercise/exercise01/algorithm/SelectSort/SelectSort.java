@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 选择排序算法
- *      选出最小的放到当前循环范围的第一个位置
+ *      选出最大的放到最后一个位置
  */
 public class SelectSort {
     public static void sort2(int[] arr) {

@@ -47,9 +47,9 @@ public class InsertSort {
 			int index = i - 1;
 			while (index >= 0 && temp < arr[index]) {
 				arr[index + 1] = arr[index];
+				arr[index] = temp;
 				index--;
 			}
-			arr[index + 1] = temp;
 
 		}
 		System.out.println("------end-----");

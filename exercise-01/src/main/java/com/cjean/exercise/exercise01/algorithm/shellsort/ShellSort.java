@@ -3,8 +3,8 @@ package com.cjean.exercise.exercise01.algorithm.shellsort;
 import java.util.Arrays;
 
 /**
- * 选择排序算法
- * 选出最小的放到当前循环范围的第一个位置
+ *希尔排序算法  数据按照比例分组后的插入算法（是插入算法的升级版）
+ *
  */
 public class ShellSort {
 
@@ -13,14 +13,15 @@ public class ShellSort {
         int gra = len / 2;
         int temp;
         while (gra > 0) {
+            // 当gra 为0 时，会有一次对以往分组排序的一次 大排序
             for (int i = gra; i < len; i++) {
                 temp = array[i];
                 int preIndex = i - gra;
                 while (preIndex >= 0 && temp < array[preIndex]) {
                     array[preIndex + gra] = array[preIndex];
+                    array[preIndex] = temp;
                     preIndex -= gra;
                 }
-                array[preIndex + gra] = temp;
             }
             gra /= 2;
         }
