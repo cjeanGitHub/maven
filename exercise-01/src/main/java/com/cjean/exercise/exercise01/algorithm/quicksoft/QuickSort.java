@@ -73,47 +73,46 @@ public class QuickSort {
      * @param right 右边的位置,初始值为数组长度
      */
     public static int[] QuickSort2(int[] pData, int left, int right) {
+
         int i, j;
         int first, temp;
         i = left;
         j = right;
-        first = pData[left]; //这里选其他的数也行，不过一般选第一个
-        //一趟快速排序
+        first = pData[left]; // 快速搜索算法的基准数，一般情况选择第一个数，但是也可以是数组内随机的数
+
+        //无限循环 从左向右找比基准大的，从右向左找比基准小的，直至找到找完，寻找与基准比较后的数，并将每次循环出的数进行交换,
         while (true) {
-            //从第二个数开始找大于中枢的数 ,从前面开始找大于pData[left]的数
-            while ((++i) < right - 1 && pData[i] < first) ;
-            //从最后一个数开始找第一个小于中枢pData[left]的数
-            while ((--j) > left && pData[j] > first) ;
-            if (i >= j)
-                break;
-            //交换两边找到的数
+            // 从左向右找一个比基准大的 并记录下标数
+            while ((++i) < (right - 1) && pData[left] > pData[i]) ;
+            // 从右向左  从第二个数开始找一个比基准小的 并记录下标数
+            while ((--j) > left && pData[left] < pData[j]) ;
+            //如果 循环完了，就结束
+            if (i >= j) break;
+            //每次找到一对大小数进行交换
             temp = pData[i];
             pData[i] = pData[j];
             pData[j] = temp;
-
         }
-        //交换中枢
+        //完成大小互换后，将基准与最后一次找到的最小的数进行交换，
+        // 实现此次比较后，比基准大的在基准数的右边，小的在基准的左边
         pData[left] = pData[j];
         pData[j] = first;
-
-        System.out.println(Arrays.toString(pData));
-        //递归快排中枢左边的数据
-        if (left < j)
-            QuickSort2(pData, left, j);
-        //递归快排中枢右边的数据
-        if (right > i)
-            QuickSort2(pData, i, right);
-
+        //将此次比较的数据进行以基准为中心进行比较
+        if (j > left) QuickSort2(pData, left, j);
+        if (i < right) QuickSort2(pData, i, right);
         return pData;
+
     }
 
     public static void main(String[] args) {
         int[] args1 = {12, 134, 195, 21, 1, 61, 981, 88};
 //        int[] args1 = { 123, 13};
         int[] args2 = null;
-        int[] args3 = {12, 134, 195, 21, 1, 61, 981, 88};
+//        int[] args3 = {12, 134, 195, 21, 1, 61, 981, 88};
+        int[] args3 = {12, 134, 195, 21, 1, 61, 981, 88, 12};
+//        int[] args3 = {134, 88};
         int[] soft = QuickSort2(args3, 0, args3.length);
-//        System.out.println(Arrays.toString(soft));
+        System.out.println(Arrays.toString(soft));
 //        for (int j = 0; j < 10; j++) {
 //            long start = System.currentTimeMillis();
 //            for (int i = 0; i < 30000; i++) {
