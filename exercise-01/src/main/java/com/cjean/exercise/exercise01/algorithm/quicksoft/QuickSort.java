@@ -1,6 +1,7 @@
 package com.cjean.exercise.exercise01.algorithm.quicksoft;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class QuickSort {
     /**
@@ -105,24 +106,37 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
+        // QuickSort 平均3秒左右
+        // QuickSort2 平均2秒左右
+
         int[] args1 = {12, 134, 195, 21, 1, 61, 981, 88};
 //        int[] args1 = { 123, 13};
         int[] args2 = null;
 //        int[] args3 = {12, 134, 195, 21, 1, 61, 981, 88};
-        int[] args3 = {12, 134, 195, 21, 1, 61, 981, 88, 12};
+//        int[] args3 = {12, 134, 195, 21, 1, 61, 981, 88, 12};
 //        int[] args3 = {134, 88};
-        int[] soft = QuickSort2(args3, 0, args3.length);
-        System.out.println(Arrays.toString(soft));
-//        for (int j = 0; j < 10; j++) {
-//            long start = System.currentTimeMillis();
+//        int[] soft = QuickSort2(args3, 0, args3.length);
+//        System.out.println(Arrays.toString(soft));
+
+        int[] temp = new int[10000];
+        Random random = new Random();
+        for (int i = 0; i < 10000; i++) {
+            int i1 = random.nextInt(10000) + 1;
+            temp[i] = i1;
+        }
+        for (int j = 0; j < 10; j++) {
+            long start = System.currentTimeMillis();
 //            for (int i = 0; i < 30000; i++) {
+            for (int i = 0; i < 300; i++) {
 //                int[] args3 = {12, 134, 195, 21, 1, 61, 981, 88};
+                int[] args3 = temp;
 //                int[] soft = QuickSort(args3, 0, args3.length - 1);
+                int[] soft = QuickSort2(args3, 0, args3.length);// 数量越多 这个越靠谱
 //            System.out.println(Arrays.toString(soft));
-//            }
-//            long end = System.currentTimeMillis();
-//            System.out.println(end - start);
-//        }
+            }
+            long end = System.currentTimeMillis();
+            System.out.println(end - start);
+        }
 
 
 //        int[] soft = QuickSort(args1, 0 ,args1.length); // null
