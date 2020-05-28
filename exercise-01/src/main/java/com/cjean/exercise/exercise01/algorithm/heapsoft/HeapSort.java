@@ -5,12 +5,12 @@ import java.util.Arrays;
 /**
  * Created by chengxiao on 2016/12/17.
  * 堆排序demo
- *  堆排序，可以将数组进行大顶堆化，也可以小顶堆化，这边小顶堆化
- *
- *  1.先将数组进行小顶堆化，此时，根节点的数是全局最小的数，此过程成为 小顶堆化过程：为了获取最小的数
- *  2.此时将根节点与最后一个数进行交换，此时最后一个数是全局最小的，然后缩小 1 个操作范围，并重复 1 （小顶堆化过程），继而将
- *  第二小的数，放置数组的倒数第二个位置，然后再缩小1个操作范围，再执行 1 （小顶堆化过程），第三个最小数也出来了.....,最后就获得
- *  一个从小到大排列的堆数
+ * 堆排序，可以将数组进行大顶堆化，也可以小顶堆化，这边小顶堆化
+ * <p>
+ * 1.先将数组进行小顶堆化，此时，根节点的数是全局最小的数，此过程成为 小顶堆化过程：为了获取最小的数
+ * 2.此时将根节点与最后一个数进行交换，此时最后一个数是全局最小的，然后缩小 1 个操作范围，并重复 1 （小顶堆化过程），继而将
+ * 第二小的数，放置数组的倒数第二个位置，然后再缩小1个操作范围，再执行 1 （小顶堆化过程），第三个最小数也出来了.....,最后就获得
+ * 一个从小到大排列的堆数
  */
 public class HeapSort {
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class HeapSort {
         int[] arr3 = {1, 2, 3, 7, 5, 6, 4, 8, 9};
         int[] arr4 = {3, 2, 4, 1, 5, 11, 13, 10, 19};
         int[] arr5 = {3, 2, 4, 1, 5};
-        int[] arr6 = {3, 2, 4, 1, 5, 7 , 10};
+        int[] arr6 = {3, 2, 4, 1, 5, 7, 10};
 //        sort(arr);
 //        sort(arr3);
 //        System.out.println(Arrays.toString(arr));
@@ -28,7 +28,9 @@ public class HeapSort {
 //        sort(arr3);
 //        sort(arr4);
 //        sort(arr5);
-        sort(arr6);
+//        sort(arr6);
+        mySoft(arr6);
+        mySoft(arr);
     }
 
     public static void sort(int[] arr) {
@@ -52,6 +54,35 @@ public class HeapSort {
             System.out.println(Arrays.toString(arr));
             System.out.println("second:" + j);
         }
+
+    }
+
+    public static void mySoft(int[] arr) {
+        for (int i = arr.length / 2 - 1; i >= 0; i--) {
+            myAdjustHeap(arr, i, arr.length);
+        }
+        for (int j = arr.length - 1; j > 0; j--) {
+            swap(arr, 0, j);
+            myAdjustHeap(arr, 0, j);
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    //构建大顶堆
+    public static void myAdjustHeap(int[] arr, int i, int length) {
+        int temp = arr[i];
+        for (int k = i * 2 + 1; k < length; k = k * 2 + 1) {
+            if (k + 1 < length && arr[k] < arr[k + 1]) k++;
+
+            if (temp < arr[k]) {
+                arr[i] = arr[k];
+                i = k;
+
+            } else {
+                break;
+            }
+        }
+        arr[i] = temp;
 
     }
 
