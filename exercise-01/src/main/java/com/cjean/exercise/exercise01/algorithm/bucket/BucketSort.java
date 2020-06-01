@@ -70,6 +70,7 @@ public class BucketSort {
      * @param bucketSize 每个桶装几个数
      */
     public static void sort2(int[] array, int bucketSize) {
+        if (null == array || array.length < 2) return;
         System.out.println("排序前：" + Arrays.toString(array));
         int arrLen = array.length;
         //获取排序数据的排序范围
@@ -90,10 +91,12 @@ public class BucketSort {
         float section = (float) diff / (float) length;
 
         //初始化所有的桶
-        ArrayList<ArrayList<Integer>> buckets = new ArrayList<>();
-        for (int i = 0; i < length; i++) {
-            buckets.add(new ArrayList<Integer>());
-        }
+//        ArrayList<ArrayList<Integer>> buckets = new ArrayList<>();
+
+        ArrayList<ArrayList<Integer>> buckets = new ArrayList<>(length);
+//        for (int i = 0; i < length; i++) {
+//            buckets.add(new ArrayList<Integer>());
+//        }
         //将多有的数放入桶中
         for (int i = 0; i < arrLen; i++) {
             int num = (int) (array[i] / section) - 1;
@@ -113,8 +116,50 @@ public class BucketSort {
                 index++;
             }
         }
-        if ((index) != (arrLen-1)) System.out.println("将桶中的数据放入原数组时出现问题...");
+        if ((index) != (arrLen - 1)) System.out.println("将桶中的数据放入原数组时出现问题...");
         System.out.println("排序后：" + Arrays.toString(array));
+    }
+
+    /**
+     * 桶排序
+     *
+     * @param array
+     * @param bucketSize
+     * @return
+     */
+    public static ArrayList<Integer> BucketSort(ArrayList<Integer> array, int bucketSize) {
+        if (array == null || array.size() < 2)
+            return array;
+        int max = array.get(0), min = array.get(0);
+        // 找到最大值最小值
+        for (int i = 0; i < array.size(); i++) {
+            if (array.get(i) > max)
+                max = array.get(i);
+            if (array.get(i) < min)
+                min = array.get(i);
+        }
+        int bucketCount = (max - min) / bucketSize + 1;
+        ArrayList<ArrayList<Integer>> bucketArr = new ArrayList<>(bucketCount);
+        ArrayList<Integer> resultArr = new ArrayList<>();
+        for (int i = 0; i < bucketCount; i++) {
+            bucketArr.add(new ArrayList<Integer>());
+        }
+        for (int i = 0; i < array.size(); i++) {
+            bucketArr.get((array.get(i) - min) / bucketSize).add(array.get(i));
+        }
+        for (int i = 0; i < bucketCount; i++) {
+            if (bucketSize == 1) { // 如果带排序数组中有重复数字时  感谢 @见风任然是风 朋友指出错误
+                for (int j = 0; j < bucketArr.get(i).size(); j++)
+                    resultArr.add(bucketArr.get(i).get(j));
+            } else {
+                if (bucketCount == 1)
+                    bucketSize--;
+                ArrayList<Integer> temp = BucketSort(bucketArr.get(i), bucketSize);
+                for (int j = 0; j < temp.size(); j++)
+                    resultArr.add(temp.get(j));
+            }
+        }
+        return resultArr;
     }
 
 
