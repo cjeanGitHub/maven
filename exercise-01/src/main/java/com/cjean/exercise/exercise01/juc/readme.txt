@@ -24,7 +24,7 @@ TestWaitNotifyDemo07、8、9、10:
 TestWaitNotifyDemo11:
     使用 locksupport 来实现
 
-
+写一个固定容量的同步容器，拥有get set 方法以及 getcount方法，能够支持2个生产者和10个消费者的阻塞调用
 
 
 
