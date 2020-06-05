@@ -1,6 +1,8 @@
 package com.cjean.exercise.exercise01.juc;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 打印 A1B2C3...Z26
@@ -15,6 +17,17 @@ public class ManTou_ProductConsume02 {
     private static int count = 0;
 
     public static void main(String[] args) {
+
+        String s = new String();
+        ArrayList<Object> objects = new ArrayList<>();
+        boolean add = objects.add("123");
+
+        ReentrantLock reentrantLock = new ReentrantLock();
+        reentrantLock.lock();
+        reentrantLock.unlock();
+
+
+
         new ProductWork().start();
 //        try {
 //            TimeUnit.SECONDS.sleep(1);
@@ -27,6 +40,10 @@ public class ManTou_ProductConsume02 {
     }
 
     public static synchronized int put(String tName, int num) {
+
+
+
+        String s = new String();
         manTou.push(tName + "：造了一个馒头");
         count++;
         System.out.println(tName + "：造了一个馒头");
