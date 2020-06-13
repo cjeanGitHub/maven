@@ -1,4 +1,4 @@
-package com.cjean.exercise.exercise01.juc;
+package com.cjean.exercise.exercise01.juc.syn;
 
 /**
  * 打印 A1B2C3...Z26

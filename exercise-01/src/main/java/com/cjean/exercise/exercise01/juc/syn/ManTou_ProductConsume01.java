@@ -1,8 +1,6 @@
-package com.cjean.exercise.exercise01.juc;
+package com.cjean.exercise.exercise01.juc.syn;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 打印 A1B2C3...Z26
@@ -10,24 +8,13 @@ import java.util.concurrent.locks.ReentrantLock;
  * A:65 z:90 a:97 z:122
  */
 
-public class ManTou_ProductConsume02 {
+public class ManTou_ProductConsume01 {
 
     public static volatile LinkedList<String> manTou = new LinkedList<>();
     private static Object lock = new Object();
     private static int count = 0;
 
     public static void main(String[] args) {
-
-        String s = new String();
-        ArrayList<Object> objects = new ArrayList<>();
-        boolean add = objects.add("123");
-
-        ReentrantLock reentrantLock = new ReentrantLock();
-        reentrantLock.lock();
-        reentrantLock.unlock();
-
-
-
         new ProductWork().start();
 //        try {
 //            TimeUnit.SECONDS.sleep(1);
@@ -37,25 +24,6 @@ public class ManTou_ProductConsume02 {
         new ConsumeWork().start();
 
 
-    }
-
-    public static synchronized int put(String tName, int num) {
-
-
-
-        String s = new String();
-        manTou.push(tName + "：造了一个馒头");
-        count++;
-        System.out.println(tName + "：造了一个馒头");
-        lock.notifyAll();
-        return ++num;
-    }
-
-    public static synchronized int get(String tName, int num) {
-        String pop = manTou.pop();
-        count--;
-        System.out.println(tName + "：拿走了一个馒头,:" + pop);
-        return ++num;
     }
 
     /**
@@ -78,6 +46,8 @@ public class ManTou_ProductConsume02 {
                 new Product("p" + "--:" + i).start();
                 System.out.println("p" + "--:" + i + "：启动...");
             }
+
+            if (count == 10) System.out.println(name + ":停止zao馒头");
         }
 
     }
@@ -102,7 +72,7 @@ public class ManTou_ProductConsume02 {
                 new Consumen("c" + "--:" + i).start();
                 System.out.println("c" + "--:" + i + "：启动...");
             }
-            System.out.println("停止chi馒头");
+            if (count < 1) System.out.println("停止chi馒头");
         }
 
     }
@@ -112,7 +82,7 @@ public class ManTou_ProductConsume02 {
      */
     static class Product extends Thread {
         private String tName;
-        private int num = 0;
+        private int num;
 
         public Product() {
         }
@@ -127,11 +97,13 @@ public class ManTou_ProductConsume02 {
 
                 while (count < 10) {
                     if (num > 4) break;
-                    num = put(tName, num);
-//                    System.out.println("-----："+num);
+                    manTou.push(tName + "：造了一个馒头");
+                    count++;
+                    num++;
+                    System.out.println(tName + "：造了一个馒头");
+                    lock.notifyAll();
                 }
 
-                System.out.println(tName + ":停止zao馒头");
             }
 
         }
@@ -143,7 +115,7 @@ public class ManTou_ProductConsume02 {
      */
     static class Consumen extends Thread {
         private String tName;
-        private int num = 0;
+        private int num;
 
         public Consumen() {
         }
@@ -164,7 +136,11 @@ public class ManTou_ProductConsume02 {
                             e.printStackTrace();
                         }
                     }
-                    num = get(tName, num);
+
+                    String pop = manTou.pop();
+                    count--;
+                    num++;
+                    System.out.println(tName + "：拿走了一个馒头,:" + pop);
 
                 }
 

@@ -1,23 +1,24 @@
-package com.cjean.exercise.exercise01.juc;
+package com.cjean.exercise.exercise01.juc.syn;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
-public class TestWaitNotifyDemo07 {
+public class TestWaitNotifyDemo08 {
     public static void main(String[] args) {
         /**
          * 由于会有cpu时间片等问题，导致2个线程在读取集合大小时并不一定时非常及时的
          */
         List<Object> objects = new ArrayList<>();
 //        System.out.println(objects.size());
-        Object o1 = new Object();
+        final Object o1 = new Object();
+        Object o2 = new Object();
 
         new Thread(() -> {
             System.out.println("t2启动");
             synchronized (o1) {
                 if (5 != objects.size()) {
-
                     try {
                         o1.wait();
                     } catch (InterruptedException e) {
@@ -36,7 +37,14 @@ public class TestWaitNotifyDemo07 {
 
                     objects.add(new Object());
                     System.out.println("add: " + objects.size());
-                    if (4 == i) o1.notify();
+                    if (4 == i) {
+                        o1.notify();
+                        try {
+                            TimeUnit.SECONDS.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
 
                 }
             }

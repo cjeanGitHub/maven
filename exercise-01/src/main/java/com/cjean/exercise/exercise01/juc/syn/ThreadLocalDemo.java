@@ -1,6 +1,4 @@
-package com.cjean.exercise.exercise01.juc;
-
-import java.util.concurrent.TimeUnit;
+package com.cjean.exercise.exercise01.juc.syn;
 
 public class ThreadLocalDemo {
 

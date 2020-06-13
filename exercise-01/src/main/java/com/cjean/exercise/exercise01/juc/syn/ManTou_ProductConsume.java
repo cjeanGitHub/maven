@@ -1,6 +1,7 @@
-package com.cjean.exercise.exercise01.juc;
+package com.cjean.exercise.exercise01.juc.syn;
 
 import java.util.LinkedList;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 打印 A1B2C3...Z26
@@ -8,7 +9,7 @@ import java.util.LinkedList;
  * A:65 z:90 a:97 z:122
  */
 
-public class ManTou_ProductConsume01 {
+public class ManTou_ProductConsume {
 
     public static volatile LinkedList<String> manTou = new LinkedList<>();
     private static Object lock = new Object();
@@ -46,8 +47,6 @@ public class ManTou_ProductConsume01 {
                 new Product("p" + "--:" + i).start();
                 System.out.println("p" + "--:" + i + "：启动...");
             }
-
-            if (count == 10) System.out.println(name + ":停止zao馒头");
         }
 
     }
@@ -72,7 +71,7 @@ public class ManTou_ProductConsume01 {
                 new Consumen("c" + "--:" + i).start();
                 System.out.println("c" + "--:" + i + "：启动...");
             }
-            if (count < 1) System.out.println("停止chi馒头");
+            System.out.println("停止chi馒头");
         }
 
     }
@@ -96,7 +95,7 @@ public class ManTou_ProductConsume01 {
             synchronized (lock) {
 
                 while (count < 10) {
-                    if (num > 4) break;
+                    if (num>4) break;
                     manTou.push(tName + "：造了一个馒头");
                     count++;
                     num++;
@@ -104,6 +103,7 @@ public class ManTou_ProductConsume01 {
                     lock.notifyAll();
                 }
 
+                System.out.println(tName+":停止zao馒头");
             }
 
         }

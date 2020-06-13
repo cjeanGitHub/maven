@@ -1,4 +1,4 @@
-package com.cjean.exercise.exercise01.juc;
+package com.cjean.exercise.exercise01.juc.syn;
 
 import java.util.ArrayList;
 import java.util.List;
