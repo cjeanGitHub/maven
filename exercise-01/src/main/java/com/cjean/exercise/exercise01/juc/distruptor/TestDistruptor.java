@@ -6,7 +6,6 @@ import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.dsl.EventHandlerGroup;
 import com.lmax.disruptor.dsl.ProducerType;
 
-import java.util.Random;
 import java.util.concurrent.*;
 
 public class TestDistruptor {

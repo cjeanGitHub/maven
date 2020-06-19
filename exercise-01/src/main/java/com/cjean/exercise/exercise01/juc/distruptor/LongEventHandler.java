@@ -18,7 +18,7 @@ import com.lmax.disruptor.EventHandler;
  */
 public class LongEventHandler implements EventHandler<LongEvent> {
 
-    private volatile int count = 0;
+    public volatile static int count = 0;
 
     @Override
     public void onEvent(LongEvent longEvent, long l, boolean b) throws Exception {
