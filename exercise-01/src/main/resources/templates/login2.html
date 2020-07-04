@@ -19,8 +19,7 @@
                 alert('请输入密码！')
                 document.getElementById('password').focus();
                 return false
-            }
-            else {
+            } else {
                 saveInfo();
                 return true;
             }
@@ -38,7 +37,7 @@
                 } else {
                     SetCookie("", "");
                 }
-                netWorking(username,password)
+                netWorking(username, password)
             } catch (e) {
 
             }
@@ -77,28 +76,29 @@
                 }
             }
         }
-        function netWorking(username,password){
+
+        function netWorking(username, password) {
             $.ajax({
-                type:"post",
-                url:loginurl,
-                data:{
-                    username:username,  //期刊id
-                    password:password,
+                type: "post",
+                url: loginurl,
+                data: {
+                    username: username,  //期刊id
+                    password: password,
                 },
-                success: function(res) {
-                    console.log("请求数据1.："+res);
-                    console.log("请求数据2.："+JSON.stringify(res));
-                    var datas=eval(res);
-                    var ticket=datas.ticket;
+                success: function (res) {
+                    console.log("请求数据1.：" + res);
+                    console.log("请求数据2.：" + JSON.stringify(res));
+                    var datas = eval(res);
+                    var ticket = datas.ticket;
                     //var ticket=datas.msg;
-                    console.log("请求数据2.："+ticket);
-                    if (ticket==undefined) {
+                    console.log("请求数据2.：" + ticket);
+                    if (ticket == undefined) {
                         alert("请您先注册");
-                    } else{
-                        window.location.href='htmls/home.html';
+                    } else {
+                        window.location.href = 'htmls/home.html';
                     }
                 },
-                error:function() {
+                error: function () {
                     alert("失败");
                 }
             });
