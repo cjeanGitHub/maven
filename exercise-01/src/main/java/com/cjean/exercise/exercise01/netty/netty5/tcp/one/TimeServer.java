@@ -1,4 +1,4 @@
-package com.cjean.exercise.exercise01.netty;
+package com.cjean.exercise.exercise01.netty.netty5.tcp.one;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -10,9 +10,6 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 public class TimeServer {
-
-
-
 
     public void bind(int port) throws Exception {
         // NIO线程组

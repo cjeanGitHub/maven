@@ -1,4 +1,4 @@
-package com.cjean.exercise.exercise01.netty;
+package com.cjean.exercise.exercise01.netty.netty5.tcp.one;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

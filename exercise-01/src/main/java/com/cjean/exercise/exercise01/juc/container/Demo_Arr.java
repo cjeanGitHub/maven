@@ -8,10 +8,20 @@ public class Demo_Arr {
     public static void main(String[] args) {
 //        test_01();
 //        test_02();
-        test_03();
+//        test_03();
+        test_04();
     }
 
-    static void test_03() {
+    static void test_04() {
+        List<Object> objects = new ArrayList<>();
+        System.out.println(objects.size());
+        objects.stream().forEach(object->{
+            System.out.println(object);
+        });
+
+
+    }
+static void test_03() {
         Demo_Arr demo_arr = new Demo_Arr();
         List<String> s1 = demo_arr.getList();
         String[] strings = s1.toArray(new String[s1.size()]);

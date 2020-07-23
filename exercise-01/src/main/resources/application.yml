@@ -3,3 +3,15 @@ spring:
     prefix: classpath:/templates/
 server:
   port: 6367
+
+#tcp端口
+#不能用localhost,否则启动报异常:Unresolved address
+#tcp监听的端口
+tcp:
+  #门控自用
+  portMk: 2016
+  #定位上传 netty-1  主板开放的端口
+  portLocation: 2020
+udp:
+  portUDP: 55531
+
