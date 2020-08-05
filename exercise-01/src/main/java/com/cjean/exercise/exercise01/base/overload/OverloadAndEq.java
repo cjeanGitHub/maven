@@ -9,6 +9,9 @@ import java.util.Objects;
  * 分析：对同一个接口进行保存，并记录连接通讯时长和项目运行访问接口总时长，可以将 接口和时长等参数构建一个 接口参数对象 visit
  * 在此种情况向需要对这个visit对象进行重写equals和和和和和和和hashcode，可以让同一个接口只新建一个，否则不重写的话，会导致
  * 每次访问接口都会新建new一个visit对象，一定会  造成内存溢出的情况
+ *
+ *
+ * 最后：总感觉每个对象都需要重写equals和hashcode，原因：1.写了不会占太多的空间；不行会导致对象构建重复的问题
  */
 public class OverloadAndEq {
     public static void main(String[] args) {
