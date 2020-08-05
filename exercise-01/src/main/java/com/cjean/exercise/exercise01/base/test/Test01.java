@@ -1,5 +1,9 @@
 package com.cjean.exercise.exercise01.base.test;
 
+import com.cjean.exercise.exercise01.base.domian.User01;
+import com.cjean.exercise.exercise01.base.domian.User02;
+import com.cjean.exercise.exercise01.juc.syn.ManTou_ProductConsume01;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +12,33 @@ public class Test01 {
 
     public static void main(String[] args) {
 
+        //测试对象与对象之间的赋值
+        testDomainChangeNil();
+
+
+        //测试 每32个字节打印一次
+//        testPrint();
+    }
+
+    static void testDomainChangeNil() {
+        User01 user01 = new User01();
+        user01.setAge(11);
+        user01.setName("haha");
+        user01.setId(0);
+
+        User02 user02 = new User02();
+        user02.setAge(user01.getAge());
+        user02.setName(user01.getName());
+        System.out.println("before nil..."+user01.toString());
+        System.out.println("before nil..."+user02.toString());
+        user01=null;
+
+        System.out.println("after  nil..."+user02.toString());
+//        System.out.println("after  nil..."+user01.toString()); //java.lang.NullPointerException
+        System.out.println("after  nil..."+user02.toString());
+    }
+
+    static void testPrint() {
 
         List<String> codeStr = new ArrayList<>();
         int mark = 0;
@@ -40,7 +71,7 @@ public class Test01 {
                     // 不能被32整除的情况
                     if (i == mark) {
                         // 最后一次发送
-                        System.out.println("总数超过32，不满32个发一次........."+(codeStr.size()-i));
+                        System.out.println("总数超过32，不满32个发一次........." + (codeStr.size() - i));
                         // 清空code，准备下一次
                         code = "";
                     } else {
@@ -58,4 +89,5 @@ public class Test01 {
             }
         }
     }
+
 }
