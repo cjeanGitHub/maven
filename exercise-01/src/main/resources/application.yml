@@ -2,7 +2,7 @@ spring:
   thymeleaf:
     prefix: classpath:/templates/
 server:
-  port: 6367
+  port: 6369
 
 #tcp端口
 #不能用localhost,否则启动报异常:Unresolved address
