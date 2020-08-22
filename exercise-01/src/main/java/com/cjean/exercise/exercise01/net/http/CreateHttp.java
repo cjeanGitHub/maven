@@ -61,7 +61,8 @@ public class CreateHttp {
         HttpResponse response;
         String reponseContent;
         httpClient = HttpClients.createDefault();
-        getMethod = new HttpGet("http://192.168.0.227/v2/frs/user/apps/2/");
+//        getMethod = new HttpGet("http://192.168.0.227/v2/frs/user/apps/2/");
+        getMethod = new HttpGet("http://zhaopin.kuaishou.cn/recruit/e/api/v1/open/positions/simple?pageNum=1&pageSize=600&positionCategoryCode=J0012&recruitProject=socialr");
         getMethod.addHeader("Content-type", "text/plain;charset=utf-8");
         getMethod.addHeader("accept", "*/*");
         getMethod.addHeader("connection", "Keep-Alive");
@@ -72,12 +73,19 @@ public class CreateHttp {
         HttpEntity httpEntity = response.getEntity();
         reponseContent = EntityUtils.toString(httpEntity);
         EntityUtils.consume(httpEntity);
-        System.out.println("-----------打印返回的 json 数据------------");
-        System.out.println(reponseContent);
-        System.out.println("-----------打印结束------------");
+//        System.out.println("-----------打印返回的 json 数据------------");
+//        System.out.println(reponseContent);
+//        System.out.println("-----------打印结束------------");
+
+
+
     }
 
     public static void main(String[] args) throws Exception {
+
+
+
+
         AccountCenter();
 //        sendPost();
     }
