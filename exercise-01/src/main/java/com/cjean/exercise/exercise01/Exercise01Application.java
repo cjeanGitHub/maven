@@ -15,6 +15,18 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class Exercise01Application extends SpringBootServletInitializer {
 
+    /**
+   boot项目打war包 需要在启动类中 extends SpringBootServletInitializer
+     并且实现
+     @Override
+     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+     return builder.sources(启动类名.class);
+     }
+
+
+
+     */
+
     public static void main(String[] args) {
         SpringApplication.run(Exercise01Application.class, args);
     }
