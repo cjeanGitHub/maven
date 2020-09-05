@@ -9,6 +9,7 @@ public class ResControllerDemo {
     @RequestMapping("/recomplite")
     public String recomplite(){
 //        return "recomplite";
-        return "recomplite222";
+        System.out.println("33333333");
+        return "recomplite   333333   ";
     }
 }

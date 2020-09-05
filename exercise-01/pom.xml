@@ -10,7 +10,8 @@
     </parent>
     <groupId>com.cjean.exercise</groupId>
     <artifactId>exercise-01</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1</version>
+    <packaging>war</packaging>
     <name>exercise-01</name>
     <description>Demo project for Spring Boot</description>
 
@@ -19,6 +20,9 @@
     </properties>
 
     <dependencies>
+
+
+
         <!-- utils -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -157,6 +161,36 @@
             <artifactId>json</artifactId>
             <version>20171018</version>
         </dependency>
+
+
+        <!--war包部署需要-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-web</artifactId>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.springframework.boot</groupId>-->
+                    <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>javax.servlet</groupId>-->
+            <!--<artifactId>javax.servlet-api</artifactId>-->
+            <!--<version>3.1.0</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>javax.websocket</groupId>-->
+            <!--<artifactId>javax.websocket-api</artifactId>-->
+            <!--<version>1.1</version>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>javax</groupId>-->
+            <!--<artifactId>javaee-api</artifactId>-->
+            <!--<version>7.0</version>-->
+        <!--</dependency>-->
+        <!--war包部署结束-->
     </dependencies>
 
     <build>
