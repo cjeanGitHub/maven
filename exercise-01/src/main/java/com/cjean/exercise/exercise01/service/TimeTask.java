@@ -12,7 +12,8 @@ import java.util.Date;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 @Component
-@EnableScheduling
+//是否开启定位任务
+//@EnableScheduling
 public class TimeTask {
     private static Logger logger = LoggerFactory.getLogger(TimeTask.class);
 
