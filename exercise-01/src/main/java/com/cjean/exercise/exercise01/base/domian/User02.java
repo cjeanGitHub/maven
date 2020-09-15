@@ -5,10 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Data
+
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Data
 public class User02 {
     public int id;
     public String name;

@@ -8,7 +8,7 @@ import lombok.ToString;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+//@ToString
 public class User01 {
     public int id;
     public String name;
