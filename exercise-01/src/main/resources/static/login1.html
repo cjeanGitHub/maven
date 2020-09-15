@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>正在登陆。。。</p>
+<iframe src="./ruzohi_index.html" width="100%" height="100%" style="border:0;"></iframe>
+//将iframe宽高设置为0，这样在登陆的时候只能看到上面的正在登陆。。。
+</body>
+<script type="text/javascript">
+    window.onload=function(){
+        document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById("usename").value='000005';//将用户名添加到input输入框中
+        console.log("222");
+        console.log(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById("usename").value);
+        document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById("userpwd").value='123456';//将密码输入到input输入框中
+        console.log("111");
+        console.log(document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById("userpwd").value);
+        var button=document.getElementsByTagName('iframe')[0].contentWindow.document.getElementById("submit");//获取登陆按钮
+        console.log("222");
+        console.log(button);
+        setTimeout(function(){
+            window.location.href="http://39.100.250.21:8080/BBS/jsp/main.jsp"
+        },500)//这里我需要进入深层的页面，所以用定时器进行跳转，如果只需要进入就去掉这个定时器就行了
+        button.click()//登陆按钮的点击
+    }
+</script>
+</html>

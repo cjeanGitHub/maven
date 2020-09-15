@@ -1,0 +1,136 @@
+/*-----------------------------------------------------------------
+ * create by huangyanliang on 2016-08-04 version V2016_1.0 for css
+ * ----------------------------------------------------------------*/
+ *{font-family:"Microsoft YaHei";}
+body{color: #fff}
+ .ell{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.pub_top{overflow:hidden;font-size:14px;}
+.pub_search_inp{width:150px;height:25px;border:solid 1px #cacaca;line-height:25px;padding-left:4px;overflow:hidden;border-radius:3px;}
+.pub_top_r{float:right;}
+.pub_top_l{float:left;}
+
+.pubmain{ width:100%;height:auto; margin:0px auto; padding:0;}
+.pubTable_t{border-bottom:1px #ccc solid;margin-bottom:20px;height:40px;color:#333;overflow:hidden;line-height:40px;font-size:15px;}
+.pubTable_t i{background:#ff7800;width:5px;height:18px;float:left;margin-right:5px;margin-top:12px;}
+.pubTable_t img{margin-right:6px;}
+.pubTable_t span{float:right;font-size:12px;}
+.table_box tr td{padding: 5px;vertical-align:middle;font-size:15px;line-height:20px;border:1px #4975B6 solid;border-width:1px 0px 0px 1px;}
+.table_box tr td a{line-height:20px;}
+.table_box {table-layout:fixed;border:1px #4975B6 solid;border-width:0px 1px 1px 0px;}
+.table_box tr{height:50px;}
+.table_box tr th{border:1px #ccc solid;border-width:1px 0px 0px 1px;text-indent: 15px;}
+.table_box tr table tr{height:40px;}
+.table_box tr table td{border-width:0px 1px 1px 0px;border-right:1px #ccc dotted;border-bottom:1px #ccc dotted;}
+#shrgButtonTable td{border:0px;}
+
+.textYear,.textDay,.longText{width:60px;border:0px;border-bottom:1px #000 solid;text-align:center;}
+.textDay{width:30px;}
+.longText{width:380px;}
+
+
+.table tr td{padding: 5px;vertical-align:middle;font-size:15px;line-height:20px;color:#fff}
+.table tr td a{line-height:20px;}
+.table-bordered {padding:20px 0px 10px 0px;table-layout:fixed;}
+
+.textlong,.textsort,.textsno,.textNum{height:25px; width:219px; line-height:25px;border:solid 1px #cacaca;color:#333;padding-left:4px;
+ overflow:hidden;border-radius:3px;}
+.textsort{ width:100px;}
+.textsno{ width:120px;}
+.textNum{width:50px;}
+.select_pub,.select_pub_s{height:26px;border-radius:3px; width:225px; line-height:22px;border:solid 1px #cacaca;color:#333; padding-left:4px;overflow-x:hidden;}
+.select_pub_s{width:109px;overflow-x:hidden;}
+.select_pub_s option{overflow-x:hidden;}
+.pub_text{width:615px;height:60px;border:solid 1px #cacaca;resize: none;padding:4px;line-height:20px;font-size:12px;border-radius:3px;}
+.mar_r{margin-right:33px;}
+.red{color:#f00;/*margin-left:6px;*/}
+
+.pub_sub_r{float:right;overflow:hidden;padding:20px;}
+.pub_text_t{font-size:14px;padding:5px;border:1px #f00 dashed;line-height:25px;}
+
+.click_nemu{cursor: pointer;}
+.click_nemu:hover{color:#f00;}
+.del_menu{background:url(../img/del.png) no-repeat left center;background-size:11px;padding-left:12px;}
+.look_nemu{background:url(../img/look.png) no-repeat left center;background-size:15px;padding-left:16px;}
+.edit_nemu{background:url('../img/pencil.png') no-repeat left center;padding-left:14px;background-size:12px;}
+.update_file{width:225px;float:left;}
+
+#showbox{width:100%;color: #fff;}
+
+.pub_top{overflow:hidden;padding:8px 0px;color: #fff;background: rgba(44, 77, 112, 0.5);}
+.pub_top_r{margin-top:10px;}
+.select_pub_s{width:175px;}
+/*.pub_table{overflow-x: auto}*/
+
+.pub_down{margin-left:10px;float:left;}
+.pub_left{float:left;}
+.file_del{padding:4px 15px; background:#00b7ee;float:left;color:#fff;border-radius:3px;margin-left:10px;cursor:pointer;}
+.file_del:hover{background:#00a2d4;}
+
+.readonlyStyle{background-color:#ebebe4;}
+.pub_th{height:50px;text-indent:20px;border-bottom:1px #f00 solid;font-size:14px;font-weight:bold;}
+/* .datagrid-cell, .datagrid-cell-group, .datagrid-header-rownumber, .datagrid-cell-rownumber{text-overflow: ellipsis;} */
+/*.datagrid-header{height: 40px!important;}*/
+.total{height:40px;line-height:40px;width:100%;}
+.total dl{border:#dcdcdc 1px solid;overflow:hidden;}
+.total dt{float:left;width:50px;text-align:center;background:#eee;border-right:1px #dcdcdc solid;font-weight:bold;font-size:14px;}
+.total dd{margin-left:10px;float:left;line-height:40px;font-size:14px;}
+
+
+
+.progressbar{width:196px;border:0px;height:15px;font-size:12px;background:#c2f7ae;-moz-box-shadow:3px 3px 3px #b5b7b3 inset;-webkit-box-shadow:3px 3px 3px #b5b7b3 inset;
+box-shadow:3px 3px 3px #b5b7b3 inset;position: relative;}
+.progressbar-value{border-radius:5px;}
+
+#shrgButtonTable{width:100%;}
+#shrgButtonTable tr{height:30px;}
+
+.add_update_l{font-weight:normal;}
+a{ text-decoration:none}
+
+.right_box{overflow-y:auto;}
+
+.search_top{overflow-y:auto;color: #fff}
+
+.file_edit:hover{background:#00a2d4;}
+.file_edit{margin-top:4px;height:20px;padding:4px 6px;background:#00b7ee;cursor:pointer;float:left;
+color:#fff;border-radius:3px;margin-left:10px;overflow:hidden;}
+
+#top_button{position: fixed;background:#fff;border-bottom:1px #ccc solid;z-index: 10;}
+#top_buttons{padding-right:35px;}
+#top_button_w{position: fixed;background:#fff;border-bottom:1px #ccc solid;z-index: 10;border-right:1px #ccc solid;}
+#top_buttons_w{padding-right:25px;}
+
+.picBig{z-index:1000;max-height:90%;box-shadow:0px 0px 10px #000; position: fixed;top:45%;left:50%;
+transform:translateY(-45%);display:none;text-align:center;background:#fff;overflow:hidden;padding:5px 5px 0px 5px;border-radius:5px;}
+.picBig img{max-height:650px;}
+.picBig span{background:url("../img/del.png") no-repeat center center #fff;cursor:pointer;width:30px;height:30px;
+background-size:15px;right:8px;top:8px;position: absolute;border-radius:15px;}
+
+.pubWinTop{padding:10px 0;border-bottom:1px #ddd solid;}
+
+.picBigDiv,.sourceBig{z-index:1000;max-height:90%;box-shadow:0px 0px 10px #000; position: fixed;top:45%;left:40%;
+transform:translateY(-45%);display:none;text-align:center;background:#fff;overflow:hidden;padding:5px 5px 0px 5px;border-radius:5px;}
+.picBigDiv img{max-width: 212px;}
+#videoDiv{height: 282px;width: 500px;}
+.picBigDiv span,.sourceBig span{background:url("../img/del.png") no-repeat center center #fff;cursor:pointer;width:30px;height:30px;
+background-size:15px;right:8px;top:8px;position: absolute;border-radius:15px;}
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar
+{
+ width: 16px;
+ height: 16px;
+ background-color: #222F52;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track
+{
+ background-color: #222F52;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb
+{
+ background-color: #335d91;
+}
+.pub_top td{white-space: nowrap;}

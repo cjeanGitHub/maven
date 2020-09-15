@@ -25,6 +25,11 @@ public class MyController {
         return "index-thymleaf";
     }
 
+    @RequestMapping("/login4")
+    public String login4(){
+        return "ruozhi/login222.html";
+    }
+
     @RequestMapping("/webSocket")
     public String webSocket(){
         return "webSocket";

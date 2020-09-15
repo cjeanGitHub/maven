@@ -1,0 +1,87 @@
+/*-----------------------------------------------------------------
+ * create by cailian on 2016-05-31 version V2016_1.0 for ��¼����css
+ * ----------------------------------------------------------------*/
+div,body{padding:0px;margin:0px;font-family:"微软雅黑";}
+/*.login_t{width:100%;height:90px;background:url(../img/logo.png) no-repeat 40px 20px;}*/
+.login_t{width:100%;height:90px;}
+.login_t span{margin-top:20px;margin-left: 40px;color: #fff;font-size: 38px;display: inline-block }
+.login_c{width:100%;overflow:hidden;}
+.login_d{position:fixed;bottom:0px;left:0px;width:100%;background:#fff;text-align:center;line-height:60px;font-size:16px;color:#575757;}
+.error_box{line-height:30px;height:26px;margin-top:10px;color:#f00;margin-left:30px;font-size:14px;}
+.error_box img{margin-right:5px;width:15px;vertical-align: middle;margin-top:-2px;}
+.login_bg{position: absolute;bottom:60px;width:53%;left:10%;}
+
+body{background:url(../img/login_bg.jpg) no-repeat center center fixed;
+background-size: cover;-moz-background-size: cover;-webkit-background-size: cover;
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/login_bg.jpg',sizingMethod='scale'); }
+ #user_box input,#login_main #pwd_box input{
+	width: 365px;
+	height: 50px;
+	line-height:50px;
+	background-color: #fff;
+	border-radius: 5px;
+	border: 1px solid #dcdcdc;
+	font-size: 16px;
+	color: #666;
+	padding-left: 50px;
+	margin-bottom:38px;
+	font-weight:normal;
+}
+
+#usename input:focus,#userpwd input:focus {
+	box-shadow: 0px 0px 5px #0b9af5;
+	opacity: 1;
+}
+
+#submit {
+	width: 365px;border-radius:5px;
+	height:50px;
+	font-size:20px;
+	text-align:center;
+	background-color:#efefef;
+	cursor:pointer;
+	border:0px;
+	color:#333;
+	margin-left:22px;
+}
+
+
+/*͸����ͼƬ*/
+#login_center {
+	width: 420px;
+	/*height: 462px;*/
+	height: 400px;
+	overflow:hidden;
+	top:50%;
+	position:absolute;
+	margin-top:-220px;margin-right:-220px;right:50%;
+	background:url(../img/login_c.png) no-repeat center center;
+}
+/*�û���*/
+#user_box{
+	position:relative;margin-left:22px;
+	}
+/*�����*/
+#pwd_box{
+	margin-top:-18px;
+	position:relative;
+	margin-left:22px;
+	}
+
+.image_icon {
+	position:absolute;
+	top:16px;
+	left:20px;
+	height: 20px;
+
+}
+#image_look{position:absolute;right:39px;top:21px;cursor:pointer;}
+ #user_system {
+	width: 366px;
+	padding-top:26px;
+	font-size: 26px;
+	line-height:50px;
+	color: #fff;
+	text-align:center;
+	margin:auto;font-family:"微软雅黑";
+}
